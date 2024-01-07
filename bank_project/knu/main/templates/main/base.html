@@ -1,0 +1,227 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <title>내 포트폴리오 사이트~..</title>
+    {% bootstrap_css%}
+    {% bootstrap_javascript%}
+    <!-- 1. Bootstrap 적용 -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "main/style.css" %}">
+    <style>
+    </style>
+  </head>
+<body>
+  {% block content %}
+  {% endblock content %}
+    <!-- 메뉴 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a href="https://github.com/gnaak">
+          <img src="{% static "main/gnaaak.png" %}" height="50px" width="50px" alt="숲" >
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <div class="nav-item text-end">
+              <a class="nav-link text-white" href="02_home.html">Home</a>
+            </div>
+            <div class="nav-item text-end">
+              <a class="nav-link text-white" href="03_community.html">Community</a>
+            </div>
+            <div class="nav-item text-end">
+              {% if user.is_authenticated %}
+                <button type="button" class="btn text-white" data-bs-toggle="modal" style="padding: 8px 0px;" onclick="redirectToUpdate()">회원정보수정</button>
+
+                <script>
+                  function redirectToUpdate() {
+                    window.location.href = "{% url 'accounts:update' %}";
+                  }
+                </script>
+
+                <button type="button" class="btn text-white" data-bs-toggle="modal" style="padding: 8px 0px;" onclick="redirectToLogout()">로그아웃</button>
+
+                <script>
+                  function redirectToLogout() {
+                    window.location.href = "{% url 'accounts:logout' %}";
+                  }
+                </script>
+                  
+              {% else %}
+                <button type="button" class="btn text-white" data-bs-toggle="modal" style="padding: 8px 0px;" onclick="redirectToSignin()">로그인</button>
+
+                <script>
+                  function redirectToSignin() {
+                    window.location.href = "{% url 'accounts:login' %}";
+                  }
+                </script>
+
+                <button type="button" class="btn text-white" data-bs-toggle="modal" style="padding: 8px 0px;" onclick="redirectToSingup()">회원가입</button>
+
+                <script>
+                  function redirectToSingup() {
+                    window.location.href = "{% url 'accounts:signup' %}";
+                  }
+                </script>
+
+
+              {% endif %}
+                      
+            </div>    
+          </ul>
+        </div>
+      </div>
+    </nav>
+                
+          
+    
+    <div id="carouselExample" class="carousel slide custom-header">
+      <a href="{% url "main:sum" %}">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static "main/main1.png" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "main/main2.png" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "main/main3.png" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "main/main4.png" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "main/main5.png" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "main/main6.png" %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </a>
+    </div>
+      
+
+
+    </div>
+      <div class="container m-3">
+        <h2 class="text-center">Boxoffice</h2>
+      </div>
+      
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+          <div class="col">
+            <div class="card">
+              <img class="w-100 h-80" src="{% static "main/movie1.jpg" %}">
+              <p class="card-text">Movie title<br><br>This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img class="w-100 h-80" src="{% static "main/movie2.jpg" %}">
+              <p class="card-text">Movie title<br><br>This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img class="w-100 h-80" src="{% static "main/movie3.jpg" %}">
+              <p class="card-text">Movie title<br><br>This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img class="w-100 h-80" src="{% static "main/movie4.jpg" %}">
+              <p class="card-text">Movie title<br><br>This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img class="w-100 h-80" src="{% static "main/movie5.jpg" %}">
+              <p class="card-text">Movie title<br><br>This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img class="w-100 h-80" src="{% static "main/movie6.jpg" %}">
+              <p class="card-text">Movie title<br><br>This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="exampleModalLabel">Login</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-front">
+              <form action="login.jsp" method="post">
+                <div class="mb-3">
+                  <label class="form-label" for="id">ID</label> 
+                  <input class="form-control" type="text" name="id" id="id" />
+                </div>
+                We'll never share your email with anyone else.
+                <div class="mb-3">
+                  <label class="form-label" for="pwd">Password</label> 
+                  <input class="form-control" type="password" name="pwd" id="pwd" />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>         
+  
+    
+      
+    
+    <footer class="footer">Web-bootstrap PJT, by 이근학</footer>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<!-- 메뉴, 메인 콘텐츠, 자기소개, 나의 기술 스택 소개, 진행한 프로젝트, 연락처, 꼬리말 -->
+
+
+<!-- 시멘틱 태그
+  - 개념 : 의미를 부여
+          -> 누구를 위한 의미?
+          -> 개발자 + 검색 엔진
+  - 종류 : eader nav -->

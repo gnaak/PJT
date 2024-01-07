@@ -1,0 +1,3 @@
+npm install axios
+npm install bootstrap
+npm install pinia-plugin-persistedstate

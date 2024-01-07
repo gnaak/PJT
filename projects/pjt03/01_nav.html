@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <title>내 포트폴리오 사이트~..</title>
+    <!-- 1. Bootstrap 적용 -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .footer{
+      height: 50px;
+      background-color: lightgray;
+      color: black;
+      position: fixed;
+      bottom: 0;
+      z-index: 9999;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+    </style>
+  </head>
+<body>
+    <!-- 메뉴 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <img src="./images/logo.png" height="50px" width="120px" alt="숲" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <div class="nav-item text-end">
+                      <a class="nav-link text-white" href="02_home.html">Home</a>
+                    </div>
+                    <div class="nav-item text-end">
+                      <a class="nav-link text-white" href="03_community.html">Community</a>
+                    </div>
+                    <div class="nav-item text-end">
+                      <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding: 8px 0px;">
+                        Login
+                      </button>
+                    </div>
+                  </ul>
+                  
+    </nav>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="exampleModalLabel">Login</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-front">
+            <form action="login.jsp" method="post">
+              <div class="mb-3">
+                <label class="form-label" for="id">ID</label> 
+                <input class="form-control" type="text" name="id" id="id" />
+              </div>
+              We'll never share your email with anyone else.
+              <br>
+              <div class="mb-3">
+                <label class="form-label" for="pwd">Password</label> 
+                <input class="form-control" type="password" name="pwd" id="pwd" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer">Web-bootstrap PJT, by 이근학</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<!-- 메뉴, 메인 콘텐츠, 자기소개, 나의 기술 스택 소개, 진행한 프로젝트, 연락처, 꼬리말 -->
+
+
+<!-- 시멘틱 태그
+  - 개념 : 의미를 부여
+          -> 누구를 위한 의미?
+          -> 개발자 + 검색 엔진
+  - 종류 : eader nav -->

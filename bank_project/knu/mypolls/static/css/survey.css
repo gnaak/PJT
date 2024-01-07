@@ -1,0 +1,104 @@
+/* static/css/survey.css */
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: #003366; /* 신한은행 브랜드 컬러 */
+    margin: 0;
+    padding: 0;
+}
+
+#survey-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.survey-field {
+    margin-bottom: 20px;
+}
+
+.survey-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #003366; /* 신한은행 브랜드 컬러 */
+}
+
+.survey-select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333; /* 글자 색상 변경 */
+}
+
+.survey-checkbox-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #003366; /* 신한은행 브랜드 컬러 */
+}
+
+button {
+    background-color: #003366; /* 신한은행 브랜드 컬러 */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #002255; /* 어두운 파란색 */
+}
+
+#survey-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#survey-container li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#survey-container li::before {
+    content: ''; /* 내용을 비워서 가상 요소를 생성하지 않음 */
+    position: absolute;
+    left: 0;
+}
+
+
+
+.result-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.result-item p {
+    margin: 10px 0; /* Increased margin for better readability */
+}
+
+#survey-container h2 {
+    color: #003366; /* Match the brand color */
+}
+
+#survey-container .result-list {
+    margin-top: 20px;
+}

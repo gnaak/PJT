@@ -1,0 +1,83 @@
+<!-- survey.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Survey</title>
+    <link rel="stylesheet" href="{% static 'css/survey.css' %}">
+</head>
+<body>
+
+<div id="survey-container">
+<form method="post" action="{% url 'mypolls:survey' %}">
+    {% csrf_token %}
+    <div class="survey-field">
+        <label for="id_full_name" class="survey-label">성명:</label>
+        {{ form.full_name }}
+    </div>
+    
+    <div class="survey-field">
+        <label for="id_age" class="survey-label">나이:</label>
+        {{ form.ages }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_gender" class="survey-label">성별:</label>
+            {{ form.gender }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_monthly_income" class="survey-label">월 소득:</label>
+            {{ form.monthly_income }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_additional_income" class="survey-label">기타 소득:</label>
+            {{ form.additional_income }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_monthly_expenses" class="survey-label">월 지출:</label>
+            {{ form.monthly_expenses }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_debt_amount" class="survey-label">현재 부채:</label>
+            {{ form.debt_amount }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_financial_goals" class="survey-label">금융 목표:</label>
+            {{ form.financial_goals }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_risk_tolerance" class="survey-label">위험 허용 수준:</label>
+            {{ form.risk_tolerance }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_current_financial_products" class="survey-label">현재 보유 중인 금융 상품:</label>
+            {{ form.current_financial_products }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_satisfaction_level" class="survey-label">현재 보유 중인 금융 상품에 대한 만족도:</label>
+            {{ form.satisfaction_level }}
+        </div>
+
+        <div class="survey-field">
+            <label for="id_financial_advice_needed" class="survey-label">추가적인 금융 상담 희망 여부:</label>
+            {{ form.financial_advice_needed }}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

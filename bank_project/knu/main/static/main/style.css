@@ -1,0 +1,83 @@
+@media (max-width: 1399px) {
+  .custom-header {
+      width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .custom-header {
+      width: 1320px;
+      margin: auto;
+  }
+}
+
+.box {
+border: 1px solid black;
+background-color: white;
+text-align: left;
+}
+
+.w-100{
+  height: 650px;
+}
+.footer{
+height: 50px;
+background-color: lightgray;
+color: black;
+position: fixed;
+bottom: 0;
+z-index: 9999;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+*{
+  font-family: "Noto Sans Kr", sans-serif;
+}
+
+.frontpage{
+  height: 300px;
+  background-color: lightgray;
+}
+
+.intro{
+  height: 300px;
+}
+
+.project{
+  height: 300px;
+  background-color: lightgray;
+}
+
+.skills{
+  height: 300px;
+}
+
+.footer{
+  height: 50px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media (max-width: 470px){
+  main,
+  section,
+  nav,
+  footer{
+    display: none;
+  }
+  .not-provided{
+  display: block;
+}
+}

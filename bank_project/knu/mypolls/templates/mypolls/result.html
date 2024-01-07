@@ -1,0 +1,38 @@
+<!-- result.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Survey</title>
+    <link rel="stylesheet" href="{% static 'css/survey.css' %}">
+</head>
+<body>
+<div id="survey-container" class="result-container">
+    <h2 class="result-heading">Survey Results</h2>
+    <ul class="result-list">
+        {% for survey in surveys %}
+            <li class="result-item">
+                <p class="result-detail"><strong>성명:</strong> {{ survey.full_name }}</p>
+                <p class="result-detail"><strong>나이:</strong> {{ survey.ages }}</p>
+                <p class="result-detail"><strong>성별:</strong> {{ survey.gender }}</p>
+                <p class="result-detail"><strong>월 소득:</strong> {{ survey.monthly_income }}</p>
+                <p class="result-detail"><strong>기타 소득:</strong> {{ survey.additional_income }}</p>
+                <p class="result-detail"><strong>월 지출:</strong> {{ survey.monthly_expenses }}</p>
+                <p class="result-detail"><strong>현재 부채:</strong> {{ survey.debt_amount }}</p>
+                <p class="result-detail"><strong>금융 목표:</strong> {{ survey.financial_goals }}</p>
+                <p class="result-detail"><strong>위험 허용 수준:</strong> {{ survey.risk_tolerance }}</p>
+                <p class="result-detail"><strong>현재 보유 중인 금융 상품:</strong> {{ survey.current_financial_products }}</p>
+                <p class="result-detail"><strong>만족도:</strong> {{ survey.satisfaction_level }}</p>
+                <p class="result-detail"><strong>추가적인 금융 상담 희망 여부:</strong> {{ survey.financial_advice_needed }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
